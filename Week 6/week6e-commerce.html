@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .container {
+                display: grid;
+                min-height: 100vh;
+                grid-template-rows: auto auto 1fr auto;
+                grid-template-columns: 200px 1fr;
+                grid-template-areas: 
+                    "header header"
+                    "sale sale"
+                    "sidebar products"
+                    "footer footer";
+                gap: 10px;
+                padding: 10px;
+            }
+            .header {
+                grid-area: header;
+                background-color: #0568e9;
+                padding: 20px;
+                text-align: center;
+                font-size: 24px;
+            }
+            .sale {
+                grid-area: sale;
+                background-color: #f4f007;
+                padding: 20px;
+                text-align: center;
+                font-size: 18px;
+            }
+            .sidebar {
+                grid-area: sidebar;
+                background-color: #ddd8d8;
+                padding: 20px;
+            }
+            .sidebar label{
+                display:block;
+                background:white;
+                padding:10px;
+                margin:8px 0;
+                border-radius:5px;
+                cursor:pointer;
+                font-weight:bold;
+            }
+
+            .sidebar label:hover{
+                background:#0568e9;
+                color:white;
+            }
+            .sidebar h3 {
+                color: black;
+                margin-top: 0;
+                font: bold;
+            }
+            .products {
+                grid-area: products;
+                background-color: #e0e0e0;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+                padding: 10px;
+            }
+            .card {
+                background-color: white;
+                padding: 6px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                text-align: center;
+            }
+            .card img {
+                width: 100%;
+                height: 140px;
+                object-fit: contain;
+                border-radius: 6px;
+            }
+            .footer {
+                grid-area: footer;
+                background-color: #0568e9;
+                padding: 20px;
+                text-align: center;
+                font-size: 14px;
+            }
+            button {
+                background-color: #0568e9;
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                font-size: 16px;
+                margin-top: 10px;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+            button:hover {
+                background-color: #034a9e;
+            }
+            .card{
+                display:none;
+            }
+
+            #electronics:checked ~ .container .electronics{
+                display:block;
+            }
+
+            #clothing:checked ~ .container .clothing{
+                display:block;
+            }
+
+            #home:checked ~ .container .home{
+                display:block;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="radio" name="category" id="electronics" hidden>
+        <input type="radio" name="category" id="clothing" hidden>
+        <input type="radio" name="category" id="home" hidden>
+        <div class="container">
+            <div class="header">
+                My E-Commerce Store
+            </div>
+            <div class="sale">
+                🔥Big Sale! Up to 50% off on selected items!🔥
+            </div>
+            <div class="sidebar">
+                <h3>Categories</h3>
+                <label for="electronics">Electronics</label>
+                <label for="clothing">Clothing</label>
+                <label for="home">Home Appliances</label>
+            </div>
+            <div class="products">
+                <div class="card electronics">
+                    <img src="phone.jpg" alt="Product 1">
+                    <h4>Phone</h4>
+                    <p>$199</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card electronics">
+                    <img src="laptop.jpg" alt="Product 2">
+                    <h4>Laptop</h4>
+                    <p>$799</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card electronics">
+                    <img src="headphone.jpg" alt="Product 3">
+                    <h4>Headphones</h4>
+                    <p>$49</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card electronics">
+                    <img src="smartwatch.jpg" alt="Product 4">
+                    <h4>Smart Watch</h4>
+                    <p>$129</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card clothing">
+                    <img src="tshirt.jpg" alt="Product 5">
+                    <h4>T-Shirt</h4>
+                    <p>$29</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card clothing">
+                    <img src="jeans.jpg" alt="Product 6">
+                    <h4>Jeans</h4>
+                    <p>$59</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card clothing">
+                    <img src="jacket.jpg" alt="Product 7">
+                    <h4>Jacket</h4>
+                    <p>$89</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card clothing">
+                    <img src="shoes.jpg" alt="Product 8">
+                    <h4>Shoes</h4>
+                    <p>$79</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card home">
+                    <img src="oven.jpg">
+                    <h4>Microwave</h4>
+                    <p>$120</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card home">
+                    <img src="blender.jpg">
+                    <h4>Blender</h4>
+                    <p>$60</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card home">
+                    <img src="vaccumcleaner.jpg">
+                    <h4>Vacuum Cleaner</h4>
+                    <p>$150</p>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="card home">
+                    <img src="airfryer.jpg">
+                    <h4>Air Fryer</h4>
+                    <p>$110</p>
+                    <button>Add to Cart</button>
+                </div>
+
+            </div>
+        </div>
+            <div class="footer">
+                &copy; 2026 My E-Commerce Store | All rights reserved.
+            </div>
+        </div>
+    </body>
+</html>
