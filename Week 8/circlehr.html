@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Horizontal Rotating Circle Animation</title>
+<style>
+body {
+  background-color: white;
+}
+.circle {
+  width: 75px;
+  height: 75px;
+  background-color:rgb(38, 4, 212);
+  border-radius: 50%;
+  position: relative;
+  animation: moveRotate 3s linear infinite;
+}
+@keyframes moveRotate {
+  0% {
+    left: 0px;
+    transform: rotate(0deg);
+  }
+  100% {
+    left: 1000px;
+    transform: rotate(360deg);
+  }
+}
+</style>
+</head>
+<body>
+<h2 style="text-align:center;"> Horizontal Rotating Circle</h2>
+<div class="circle"></div>
+</body>
+</html>

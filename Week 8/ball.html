@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ball Animation</title>
+<style>
+body {
+  background-color: white;
+}
+.ball {
+  width: 75px;
+  height: 75px;
+  background-color: rgb(5, 113, 32);
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  animation-name: moveUpDown;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes moveUpDown {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 500px;
+  }
+}
+</style>
+</head>
+<body>
+<h2 style="text-align:center;">Ball Moving Up and Down</h2>
+<div class="ball"></div>
+</body>
+</html>

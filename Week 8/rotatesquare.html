@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rotating Square Animation</title>
+<style>
+body {
+  background-color:white;
+}
+.square {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  border-radius:10px;
+  margin: 100px auto;
+  animation-name: rotatesquare;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes rotatesquare {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
+</head>
+<body>
+<h2 style="text-align:center;">360 Degree Rotating Square</h2>
+<div class="square"></div>
+</body>
+</html>
