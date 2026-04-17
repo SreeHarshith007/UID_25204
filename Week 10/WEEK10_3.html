@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Largest of Five Numbers</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #eef2f7;
+        text-align: center;
+        margin-top: 80px;
+    }
+
+    input {
+        padding: 8px;
+        margin: 5px;
+        width: 120px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #6c8cff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #4a6ee0;
+    }
+
+    h3 {
+        color: #333;
+    }
+</style>
+
+</head>
+
+<body>
+
+<h2>Find Largest Number</h2>
+
+<input type="number" id="n1"><br>
+<input type="number" id="n2"><br>
+<input type="number" id="n3"><br>
+<input type="number" id="n4"><br>
+<input type="number" id="n5"><br><br>
+
+<button onclick="check()">Check</button>
+
+<h3 id="result"></h3>
+
+<script>
+function check() {
+    let a = parseInt(document.getElementById("n1").value);
+    let b = parseInt(document.getElementById("n2").value);
+    let c = parseInt(document.getElementById("n3").value);
+    let d = parseInt(document.getElementById("n4").value);
+    let e = parseInt(document.getElementById("n5").value);
+
+    let largest = a;
+
+    if (b > largest) largest = b;
+    if (c > largest) largest = c;
+    if (d > largest) largest = d;
+    if (e > largest) largest = e;
+
+    document.getElementById("result").innerHTML = "Largest Number: " + largest;
+}
+</script>
+
+</body>
+</html>
