@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Number Programs</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial;
+        background-color: #e6e6e6;
+    }
+
+    .header {
+        background-color: #1e6bd6;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    input {
+        padding: 10px;
+        width: 70%;
+        margin: 10px 0;
+    }
+
+    button {
+        background-color: #1e6bd6;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        margin: 5px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: #1555a5;
+    }
+
+    .output {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+</style>
+
+</head>
+
+<body>
+
+<div class="header">AV.SC.U4CSE25204</div>
+
+<div class="container">
+
+    <!-- EVEN / ODD -->
+    <div class="card">
+        <h3>Even or Odd</h3>
+        <input type="number" id="eo">
+        <br>
+        <button onclick="checkEO()">Check</button>
+        <div class="output" id="eoOut"></div>
+    </div>
+
+    <!-- PRIME -->
+    <div class="card">
+        <h3>Prime Number</h3>
+        <input type="number" id="prime">
+        <br>
+        <button onclick="checkPrime()">Check</button>
+        <div class="output" id="primeOut"></div>
+    </div>
+
+    <!-- FACTORIAL -->
+    <div class="card">
+        <h3>Factorial</h3>
+        <input type="number" id="fact">
+        <br>
+        <button onclick="factorial()">Calculate</button>
+        <div class="output" id="factOut"></div>
+    </div>
+
+    <!-- ARMSTRONG -->
+    <div class="card">
+        <h3>Armstrong Number</h3>
+        <input type="number" id="arm">
+        <br>
+        <button onclick="checkArmstrong()">Check</button>
+        <div class="output" id="armOut"></div>
+    </div>
+
+</div>
+
+<script>
+function checkEO() {
+    let n = parseInt(document.getElementById("eo").value);
+
+    if (n % 2 == 0) {
+        document.getElementById("eoOut").innerText = "Even Number";
+    } else {
+        document.getElementById("eoOut").innerText = "Odd Number";
+    }
+}
+
+function checkPrime() {
+    let n = parseInt(document.getElementById("prime").value);
+    let flag = true;
+
+    if (n <= 1) {
+        flag = false;
+    } else {
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                flag = false;
+                break;
+            }
+        }
+    }
+
+    if (flag) {
+        document.getElementById("primeOut").innerText = "Prime Number";
+    } else {
+        document.getElementById("primeOut").innerText = "Not Prime";
+    }
+}
+
+function factorial() {
+    let n = parseInt(document.getElementById("fact").value);
+    let f = 1;
+
+    if (n < 0) {
+        document.getElementById("factOut").innerText = "Invalid input";
+        return;
+    }
+
+    for (let i = 1; i <= n; i++) {
+        f *= i;
+    }
+
+    document.getElementById("factOut").innerText = "Factorial = " + f;
+}
+
+function checkArmstrong() {
+    let n = parseInt(document.getElementById("arm").value);
+    let temp = n;
+    let sum = 0;
+
+    while (temp > 0) {
+        let r = temp % 10;
+        sum += r * r * r;
+        temp = Math.floor(temp / 10);
+    }
+
+    if (sum == n) {
+        document.getElementById("armOut").innerText = "Armstrong Number";
+    } else {
+        document.getElementById("armOut").innerText = "Not Armstrong";
+    }
+}
+</script>
+
+</body>
+</html>
