@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Validation</title>
+</head>
+<body>
+<h2>Enter Mobile Number</h2>
+<input type="text" id="mobile" onblur="checkMobile()">
+<p id="msg"></p>
+<script>
+function checkMobile() {
+    let number = document.getElementById("mobile").value;
+    let message = document.getElementById("msg");
+    if (number.length == 10 && number >= 0) {
+        message.innerText = "Valid Mobile Number";
+    } else {
+        message.innerText = "Invalid Mobile Number";
+    }
+}
+</script>
+</body>
+</html>

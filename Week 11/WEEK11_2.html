@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Email Validation</title>
+
+<style>
+    body {
+        display: flex;
+        justify-content: center;   /* horizontal center */
+        align-items: center;       /* vertical center */
+        height: 100vh;
+        margin: 0;
+        font-family: Arial;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    input, button {
+        padding: 8px;
+        font-size: 16px;
+        margin: 5px;
+    }
+</style>
+
+<script>
+function validateEmail() {
+    var email = document.getElementById("email").value;
+    var pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+    if (!pattern.test(email)) {
+        alert("Invalid E-Mail Address");
+        return false;
+    }
+
+    alert("Valid E-Mail Address");
+    return true;
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+    <form onsubmit="return validateEmail()">
+        <input type="text" id="email" placeholder="Enter Email" required><br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Validation</title>
+    </head>
+<body>
+<h2>Registration Form</h2>
+<form onsubmit="return validateForm()">
+    <table border="1" cellpadding="10">
+        <tr>
+            <td>Name:<input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td>Email:<input type="text" id="email"></td>
+        </tr>
+        <tr>
+            <td>Password:<input type="text" id="password"></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="Register">
+            </td>
+        </tr>
+    </table>
+</form>
+<p id="msg"></p>
+<script>
+function validateForm() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (name == "") {
+        document.getElementById("msg").innerHTML = "Name cannot be empty";
+        return false;
+    }
+    if (!email.match(pattern)) {
+        document.getElementById("msg").innerHTML = "Invalid Email";
+        return false;
+    }
+    if (password.length < 6) {
+        document.getElementById("msg").innerHTML = "Password must be at least 6 characters";
+        return false;
+    }
+    document.getElementById("msg").innerHTML = "Form submitted successfully ✅";
+    return false;
+}
+</script>
+</body>
+</html>
